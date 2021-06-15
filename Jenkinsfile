@@ -30,7 +30,6 @@ pipeline {
     }
     // [START tf-init, tf-validate]
     stage('TF init & validate') {
-      when { branch "prod"} 
       steps {
           sh '''
           if [[ $CHANGE_TARGET ]]; then
