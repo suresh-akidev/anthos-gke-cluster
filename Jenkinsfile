@@ -21,10 +21,12 @@ pipeline {
 	}
   stages {
     stage('Set kpt and Kustomize path') {
-      sh '''
-      export WORK_DIR=$PWD
-      export PATH=$PATH:$WORK_DIR/bin:
-      '''
+      steps {
+          sh '''
+          export WORK_DIR=$PWD
+          export PATH=$PATH:$WORK_DIR/bin:
+          '''
+      }
     }
     // [START tf-init, tf-validate]
     stage('TF init & validate') {
